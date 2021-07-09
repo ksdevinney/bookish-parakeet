@@ -1,4 +1,6 @@
 import React from 'react'
+import MeetupList from '../components/meetups/MeetupList';
+
 const dummyData = [
     {
         id: 'm1',
@@ -24,13 +26,9 @@ const AllMeetups = () => {
     return (
         <section>
             <h1>All Meetups Page!</h1>
-            <ul>
-            {dummyData.map((meetup) => {
-                return <li key={meetup.id}>{meetup.title}</li>;
-            })}
-            </ul>
+            <MeetupList meetups={dummyData} />
         </section>
-    )
+    );
 }
 
 export default AllMeetups

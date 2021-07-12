@@ -3,9 +3,11 @@ import { useHistory } from "react-router-dom";
 import NewMeetupForm from "../components/meetups/NewMeetupForm";
 
 const NewMeetups = () => {
+    // use history hook to redirect on form submit
     const history = useHistory();
 
   function addMeetupHandler(meetupData) {
+      // post form data to firebase
     fetch("https://bookish-parakeet-default-rtdb.firebaseio.com/meetups.json", {
       method: "POST",
       body: JSON.stringify(meetupData),
@@ -14,6 +16,7 @@ const NewMeetups = () => {
       },
     })
     .then(() => {
+        // redirect to main page
         history.replace('/');
     });
   }

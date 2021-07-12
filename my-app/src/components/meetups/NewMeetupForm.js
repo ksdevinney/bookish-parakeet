@@ -4,6 +4,7 @@ import classes from './NewMeetupForm.module.css';
 import Card from '../ui/Card';
 
 const NewMeetupForm = (props) => {
+    // refs for form data
 const titleInputRef = useRef();
 const imageInputRef = useRef();
 const addressInputRef = useRef();
@@ -17,6 +18,7 @@ function submitHandler(event) {
     const enteredAddress = addressInputRef.current.value;
     const enteredDesc = descInputRef.current.value;
 
+    // object of form data
     const meetupData = {
         title: enteredTitle,
         image: enteredImage,
@@ -26,7 +28,7 @@ function submitHandler(event) {
 
     props.onAddMeetup(meetupData);
 }
-
+    // form
     return (
         <Card>
             <form className={classes.form}onSubmit={submitHandler}>

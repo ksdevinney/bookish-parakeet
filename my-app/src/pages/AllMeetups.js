@@ -7,7 +7,7 @@ const AllMeetups = () => {
 
     useEffect(() => {
         setIsLoading(true);
-        fetch("https://bookish-parakeet-default-rtdb.firebaseio.com/meetups.json")
+        fetch('https://bookish-parakeet-default-rtdb.firebaseio.com/meetups.json')
         .then(response => {
             return response.json();
         })
